@@ -1,0 +1,47 @@
+<h1>New Page</h1>
+
+<%= form_for @events,  url: events_path, method: :POST do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% @events.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :phn_no %><br>
+    <%= form.text_field :phn_no %>
+    <% @events.errors.full_messages_for(:phn_no).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+    <% @events.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :start_date %><br>
+    <%= form.date_field :start_date %>
+    <% @events.errors.full_messages_for(:start_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div> 
+
+  <div>
+    <%= form.label :end_date %><br>
+    <%= form.date_field :end_date %>
+    <% @events.errors.full_messages_for(:end_date).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

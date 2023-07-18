@@ -1,0 +1,21 @@
+<%= form_with model: schedule do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <%= schedule.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :phn_no %><br>
+    <%= form.text_area :phn_no %><br>
+    <% schedule.errors.full_messages_for(:phn_no).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

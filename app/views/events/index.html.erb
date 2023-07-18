@@ -1,0 +1,19 @@
+<h1>schedule#index</h1>
+<h1>WELCOME</h1>
+
+<ul>
+  <% @events.each do |events| %>
+    <li>
+      <%# <a href="/schedules/<%=sc.id %>"
+      <%= link_to events.name, event_path(events.id) %><br>
+      <%= link_to "Edit", edit_event_path(events.id) %><br>
+      <%= link_to "Destroy", event_path(events.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+  </li>
+  <% end %>
+</ul>
+<%= link_to "New page", new_event_path %>
+
+  

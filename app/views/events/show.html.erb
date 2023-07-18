@@ -1,0 +1,16 @@
+
+<h1>NAME: <%= @events.name %></h1>
+<h1>CONTACT: <%= @events.phn_no %></h1>
+<h2>EMAIL: <%= @events.email %></h2>
+<h3>START DATE: <%= @events.start_date %></h3>
+<h4>END DATE: <%= @events.end_date %></h4>
+
+<ul>
+  <li><%= link_to "Edit", edit_event_path(@events.id) %></li>
+  <li><%= link_to "Destroy", event_path(@events.id), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+
+</ul>
+
